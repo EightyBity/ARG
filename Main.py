@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #Wyvern squadron os
 #project proposed by:Wyvern 3 aka Eighty Bity
 import cmd
@@ -7,4 +9,5 @@ import os
 import time
 from game import *
 
-Game()
+if __name__ == '__Main__':
+    Game()
