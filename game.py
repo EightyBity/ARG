@@ -6,8 +6,9 @@ import sys
 import os
 import time
 import random
-from wyvern3 import *
-from newuser import *
+from wyvern3 import passwordRequired
+from newuser import screen1
+
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
 

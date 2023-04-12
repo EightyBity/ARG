@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def passwordRequired():
     print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
 /  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
@@ -13,7 +15,9 @@ $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/
                                                                                                                                                         
 
 username:Wyvern3''')
-password = input('password: ')
-if password == 'test':
-    print('''yes''')
-passwordRequired()
+    password = input('password: ')
+    if password == 'test':
+        print('''yes''')
+if __name__ == '__Main__':
+    passwordRequired()
+    input('paused on newuser import')
