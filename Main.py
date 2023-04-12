@@ -4,5 +4,5 @@
 #project proposed by:Wyvern 3 aka Eighty Bity
 from game import Game
 
-if __name__ == '__Main__':
+if __name__ == '__main__':
     Game()

@@ -8,14 +8,14 @@ import time
 import random
 from wyvern3 import passwordRequired
 from newuser import screen1
-
-def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
+from cls import cls
 
 def Game():
     cls()
     disclaimer = '''MAKE SURE THE WINDOW IS IN FULLSCREEN OTHERWISE ASCII ART AND OTHER ASSETS MIGHT NOT SHOW PROPERLY
-WRITE DOWN I AGREE WHEN THE SCREEN HAS BEEN PUT IN FULLSCREEN'''
+PLEASE DO NOT PRESS ON CTRL+C UNLESS THE PROGRAM NEEDS TO BE CLOSED
+WHEN NEEDED A HELP COMMAND WILL BE SHOWN TO GIVE YOU AVAILABLE COMMANDS 
+WRITE DOWN I AGREE IF YOU UNDERSTOOD EVERYTHING IN THIS DISCLAIMER'''
     for character in disclaimer:
           sys.stdout.write(character)
           sys.stdout.flush()
@@ -23,9 +23,8 @@ WRITE DOWN I AGREE WHEN THE SCREEN HAS BEEN PUT IN FULLSCREEN'''
     answer=input('''
 ''')
     if answer.lower().strip()=='i agree':
-        def user():
-            cls()
-            print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
+        cls()
+        title = ''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
 /  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
 $$ | / \ $$ |$$  \  /$$/ $$ |   $$ |$$$$$$$$/ $$$$$$$  |$$  \ $$ |      /$$$$$$  |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \ $$ |
 $$ |/$  \$$ | $$  \/$$/  $$ |   $$ |$$ |__    $$ |__$$ |$$$  \$$ |      $$ \__$$/ $$ |  $$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$$  \$$ |
@@ -36,9 +35,12 @@ $$$/    $$$ |    $$ |       $$$/    $$       |$$ |  $$ |$$ | $$$ |      $$    $$
 $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/   $$$$$$  | $$$$$$/  $$/   $$/ $$$$$$$/  $$/   $$/  $$$$$$/  $$/   $$/ 
                                                                                        $$$/                                                             
                                                                                                                                                         
-                                                                                                                                                        
-
-username:''')
+'''
+        for character in title:
+            sys.stdout.write(character)
+            sys.stdout.flush()
+            time.sleep(0.005)
+        def user():
             usernameFound = 'a username has been found, do you want to use it now?(y/n)'
             for character in usernameFound:
                sys.stdout.write(character)
