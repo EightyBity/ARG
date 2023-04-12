@@ -3,6 +3,7 @@ import time
 import sys
 import random
 
+from wyverndesktop import *
 from cls import cls
 def passwordRequired():
     print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
@@ -34,12 +35,14 @@ $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/
                                                                                        $$$/                                                             
                                                                                                                                                         
 ''')
-        greeting = 'Welcome back wyven 3'
+        greeting = '''Welcome back wyven 3
+
+'''
         for character in greeting:
             sys.stdout.write(character)
             sys.stdout.flush()
             time.sleep(0.05)
-            
+
         load = 'loading [0%]'
         for character in load:
             sys.stdout.write(character)
@@ -146,7 +149,11 @@ $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/
                                                                                                                                                         
 Welcome back wyvern 3
 
-Load complete! what should we do?''')
+Load complete! what should we do?
+if this is not you and you simply found the password by accident please type 'back' and alert a wyvern lead as soon as possible
+
+desktop         internet        about''')
+        nav()
+        
 if __name__ == '__main__':
     passwordRequired()
-    input('paused on newuser import')
