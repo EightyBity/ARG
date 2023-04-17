@@ -10,7 +10,7 @@ from wyvern3 import passwordRequired
 from newuser import screen1
 from cls import cls
 
-def Game():
+def disclaimer():
     cls()
     disclaimer = '''MAKE SURE THE WINDOW IS IN FULLSCREEN OTHERWISE ASCII ART AND OTHER ASSETS MIGHT NOT SHOW PROPERLY
 PLEASE DO NOT PRESS ON CTRL+C UNLESS THE PROGRAM NEEDS TO BE CLOSED
@@ -40,24 +40,39 @@ $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/
             sys.stdout.write(character)
             sys.stdout.flush()
             time.sleep(0.005)
-        def user():
+    Game()
+    
+def Game():
+    
+        
             usernameFound = 'a username has been found, do you want to use it now?(y/n)'
             for character in usernameFound:
                sys.stdout.write(character)
                sys.stdout.flush()
                time.sleep(0.05)
-            use_username=input()
-            if use_username.lower().strip() in ['y','yes']:
-                cls()
-                passwordRequired()
-            elif use_username.lower().strip() in ['n','no']:
-                cls()
-                screen1()
+            while True:
+                use_username=input()
+                if use_username.lower().strip() in ['y','yes']:
+                    cls()
+                    passwordRequired()
+                elif use_username.lower().strip() in ['n','no']:
+                    cls()
+                    screen1()
 
-            else:
-                cls()
-               
-                user()
-        user()
+                else:
+                    cls()
+                    print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
+/  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
+$$ | / \ $$ |$$  \  /$$/ $$ |   $$ |$$$$$$$$/ $$$$$$$  |$$  \ $$ |      /$$$$$$  |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \ $$ |
+$$ |/$  \$$ | $$  \/$$/  $$ |   $$ |$$ |__    $$ |__$$ |$$$  \$$ |      $$ \__$$/ $$ |  $$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$$  \$$ |
+$$ /$$$  $$ |  $$  $$/   $$  \ /$$/ $$    |   $$    $$< $$$$  $$ |      $$      \ $$ |  $$ |$$ |  $$ |$$    $$ |$$ |  $$ |$$    $$< $$ |  $$ |$$$$  $$ |
+$$ $$/$$ $$ |   $$$$/     $$  /$$/  $$$$$/    $$$$$$$  |$$ $$ $$ |       $$$$$$  |$$ |_ $$ |$$ |  $$ |$$$$$$$$ |$$ |  $$ |$$$$$$$  |$$ |  $$ |$$ $$ $$ |
+$$$$/  $$$$ |    $$ |      $$ $$/   $$ |_____ $$ |  $$ |$$ |$$$$ |      /  \__$$ |$$ / \$$ |$$ \__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ \__$$ |$$ |$$$$ |
+$$$/    $$$ |    $$ |       $$$/    $$       |$$ |  $$ |$$ | $$$ |      $$    $$/ $$ $$ $$< $$    $$/ $$ |  $$ |$$    $$/ $$ |  $$ |$$    $$/ $$ | $$$ |
+$$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/   $$$$$$  | $$$$$$/  $$/   $$/ $$$$$$$/  $$/   $$/  $$$$$$/  $$/   $$/ 
+                                                                                       $$$/                                                             
+                                                                                                                                                        
+please enter (y/n) or (yes/no)''')
+            
 if __name__=='__main__':
     Game()         

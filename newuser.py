@@ -3,6 +3,8 @@
 import sys
 import time
 
+from getpass import __all__
+
 from cls import cls
 
 class password:
@@ -33,6 +35,11 @@ username:NewUser''')
                 sys.stdout.write(character)
                 sys.stdout.flush()
                 time.sleep(0.05)
+            cls()
+            screen1()
+        else:
+            print('please make sure both spellings are correct')
+            time.sleep(1)
             cls()
             screen1()
     else:

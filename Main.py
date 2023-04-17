@@ -2,7 +2,7 @@
 
 #Wyvern squadron os
 #project proposed by:Wyvern 3 aka Eighty Bity
-from game import Game
+import game
 
 if __name__ == '__main__':
-    Game()
+    game.disclaimer()

@@ -13,6 +13,9 @@
   ('calendar', '/usr/lib/python3.10/calendar.py', 'PYMODULE'),
   ('cls', '/home/eighty_bity/Desktop/game test/ARG/cls.py', 'PYMODULE'),
   ('cmd', '/usr/lib/python3.10/cmd.py', 'PYMODULE'),
+  ('confidential',
+   '/home/eighty_bity/Desktop/game test/ARG/confidential.py',
+   'PYMODULE'),
   ('contextlib', '/usr/lib/python3.10/contextlib.py', 'PYMODULE'),
   ('contextvars', '/usr/lib/python3.10/contextvars.py', 'PYMODULE'),
   ('copy', '/usr/lib/python3.10/copy.py', 'PYMODULE'),
@@ -128,4 +131,7 @@
   ('typing', '/usr/lib/python3.10/typing.py', 'PYMODULE'),
   ('uu', '/usr/lib/python3.10/uu.py', 'PYMODULE'),
   ('wyvern3', '/home/eighty_bity/Desktop/game test/ARG/wyvern3.py', 'PYMODULE'),
+  ('wyverndesktop',
+   '/home/eighty_bity/Desktop/game test/ARG/wyverndesktop.py',
+   'PYMODULE'),
   ('zipfile', '/usr/lib/python3.10/zipfile.py', 'PYMODULE')])
