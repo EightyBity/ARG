@@ -8,7 +8,9 @@ import time
 from cls import cls
 from newuser import screen1
 import confidential
+import userfile
 import game
+import wyverntxt
 
 def screen():
      cls()
@@ -76,6 +78,7 @@ write back to go back'''
             
             about_input = input('''
 ''')
+
             while True:
                 if about_input.lower().strip() == 'back':
                     cls()
@@ -152,7 +155,7 @@ def desktop():
     user = input()
     if user.lower().strip() in ['y','yes']:
             cls()
-            mainDesktop = '''
+            mainDesktop1 = '''
   (`\ .-') /`                   (`-.      ('-.    _  .-')        .-') _                  
    `.( OO ),'                 _(OO  )_  _(  OO)  ( \( -O )      ( OO ) )                 
 ,--./  .--.    ,--.   ,--.,--(_/   ,. \(,------.  ,------.  ,--./ ,--,'         .-----.  
@@ -168,10 +171,48 @@ confidential        users       wyverns.txt
 allies.txt          kos.txt     orders
 for help type help
 '''
-            for character in mainDesktop:
+            for character in mainDesktop1:
                 sys.stdout.write(character)
                 sys.stdout.flush()
                 time.sleep(0.005)
+            mainDesktop()
+    elif user.lower().strip() in ['n','no']:
+            cls()
+            print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
+/  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
+$$ | / \ $$ |$$  \  /$$/ $$ |   $$ |$$$$$$$$/ $$$$$$$  |$$  \ $$ |      /$$$$$$  |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \ $$ |
+$$ |/$  \$$ | $$  \/$$/  $$ |   $$ |$$ |__    $$ |__$$ |$$$  \$$ |      $$ \__$$/ $$ |  $$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$$  \$$ |
+$$ /$$$  $$ |  $$  $$/   $$  \ /$$/ $$    |   $$    $$< $$$$  $$ |      $$      \ $$ |  $$ |$$ |  $$ |$$    $$ |$$ |  $$ |$$    $$< $$ |  $$ |$$$$  $$ |
+$$ $$/$$ $$ |   $$$$/     $$  /$$/  $$$$$/    $$$$$$$  |$$ $$ $$ |       $$$$$$  |$$ |_ $$ |$$ |  $$ |$$$$$$$$ |$$ |  $$ |$$$$$$$  |$$ |  $$ |$$ $$ $$ |
+$$$$/  $$$$ |    $$ |      $$ $$/   $$ |_____ $$ |  $$ |$$ |$$$$ |      /  \__$$ |$$ / \$$ |$$ \__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ \__$$ |$$ |$$$$ |
+$$$/    $$$ |    $$ |       $$$/    $$       |$$ |  $$ |$$ | $$$ |      $$    $$/ $$ $$ $$< $$    $$/ $$ |  $$ |$$    $$/ $$ |  $$ |$$    $$/ $$ | $$$ |
+$$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/   $$$$$$  | $$$$$$/  $$/   $$/ $$$$$$$/  $$/   $$/  $$$$$$/  $$/   $$/ 
+                                                                                       $$$/                                                             
+                                                                                                                                                        
+Welcome back wyvern 3
+
+what should we do?
+
+desktop         internet        about''')
+            nav()
+def mainDesktop():
+            cls()
+            print('''
+  (`\ .-') /`                   (`-.      ('-.    _  .-')        .-') _                  
+   `.( OO ),'                 _(OO  )_  _(  OO)  ( \( -O )      ( OO ) )                 
+,--./  .--.    ,--.   ,--.,--(_/   ,. \(,------.  ,------.  ,--./ ,--,'         .-----.  
+|      |  |     \  `.'  / \   \   /(__/ |  .---'  |   /`. ' |   \ |  |\        /  -.   \ 
+|  |   |  |,  .-')     /   \   \ /   /  |  |      |  /  | | |    \|  | )       '-' _'  | 
+|  |.'.|  |_)(OO  \   /     \   '   /, (|  '--.   |  |_.' | |  .     |/           |_  <  
+|         |   |   /  /\_     \     /__) |  .--'   |  .  '.' |  |\    |         .-.  |  | 
+|   ,'.   |   `-./  /.__)     \   /     |  `---.  |  |\  \  |  | \   |         \ `-'   / 
+'--'   '--'     `--'           `-'      `------'  `--' '--' `--'  `--'          `----''  
+
+confidential        users       wyverns.txt     
+
+allies.txt          kos.txt     orders
+for help type help
+''')
             while True:
                 user = input()
                 if user.lower().strip() =='help':
@@ -183,11 +224,50 @@ some folders will require passwords to be accessed, when asked just type the pas
                         sys.stdout.write(character)
                         sys.stdout.flush()
                         time.sleep(0.005)
-                if user.startswith('cd'):
+                elif user.startswith('cd'):
                     if user.endswith('confidential'):
                         confidential.conFile()
+                    elif user.endswith('users'):
+                         userfile.userdoc()
+                    elif user.endswith('.txt') or user.endswith('orders'):
+                         cls()
+                         print('''
+  (`\ .-') /`                   (`-.      ('-.    _  .-')        .-') _                  
+   `.( OO ),'                 _(OO  )_  _(  OO)  ( \( -O )      ( OO ) )                 
+,--./  .--.    ,--.   ,--.,--(_/   ,. \(,------.  ,------.  ,--./ ,--,'         .-----.  
+|      |  |     \  `.'  / \   \   /(__/ |  .---'  |   /`. ' |   \ |  |\        /  -.   \ 
+|  |   |  |,  .-')     /   \   \ /   /  |  |      |  /  | | |    \|  | )       '-' _'  | 
+|  |.'.|  |_)(OO  \   /     \   '   /, (|  '--.   |  |_.' | |  .     |/           |_  <  
+|         |   |   /  /\_     \     /__) |  .--'   |  .  '.' |  |\    |         .-.  |  | 
+|   ,'.   |   `-./  /.__)     \   /     |  `---.  |  |\  \  |  | \   |         \ `-'   / 
+'--'   '--'     `--'           `-'      `------'  `--' '--' `--'  `--'          `----''  
+
+confidential        users       wyverns.txt     
+
+allies.txt          kos.txt     orders
+im sorry, the cd command is to go through directories, did you mean to use cat?
+''')
+                    else:
+                         cls()
+                         print('''
+  (`\ .-') /`                   (`-.      ('-.    _  .-')        .-') _                  
+   `.( OO ),'                 _(OO  )_  _(  OO)  ( \( -O )      ( OO ) )                 
+,--./  .--.    ,--.   ,--.,--(_/   ,. \(,------.  ,------.  ,--./ ,--,'         .-----.  
+|      |  |     \  `.'  / \   \   /(__/ |  .---'  |   /`. ' |   \ |  |\        /  -.   \ 
+|  |   |  |,  .-')     /   \   \ /   /  |  |      |  /  | | |    \|  | )       '-' _'  | 
+|  |.'.|  |_)(OO  \   /     \   '   /, (|  '--.   |  |_.' | |  .     |/           |_  <  
+|         |   |   /  /\_     \     /__) |  .--'   |  .  '.' |  |\    |         .-.  |  | 
+|   ,'.   |   `-./  /.__)     \   /     |  `---.  |  |\  \  |  | \   |         \ `-'   / 
+'--'   '--'     `--'           `-'      `------'  `--' '--' `--'  `--'          `----''  
+
+confidential        users       wyverns.txt     
+
+allies.txt          kos.txt     orders
+no directory found
+''')
                 elif user.startswith('cat'):
-                     print(user)
+                    if user.lower().endswith('wyverns.txt'):
+                         wyverntxt.wyvernscript()
                 else:
                      cls()
                      print('''
@@ -211,24 +291,7 @@ for help type help
 user, '''was not a valid input, type help for more help
 ''')
             
-    elif user.lower().strip() in ['n','no']:
-            ''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
-/  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
-$$ | / \ $$ |$$  \  /$$/ $$ |   $$ |$$$$$$$$/ $$$$$$$  |$$  \ $$ |      /$$$$$$  |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \ $$ |
-$$ |/$  \$$ | $$  \/$$/  $$ |   $$ |$$ |__    $$ |__$$ |$$$  \$$ |      $$ \__$$/ $$ |  $$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$$  \$$ |
-$$ /$$$  $$ |  $$  $$/   $$  \ /$$/ $$    |   $$    $$< $$$$  $$ |      $$      \ $$ |  $$ |$$ |  $$ |$$    $$ |$$ |  $$ |$$    $$< $$ |  $$ |$$$$  $$ |
-$$ $$/$$ $$ |   $$$$/     $$  /$$/  $$$$$/    $$$$$$$  |$$ $$ $$ |       $$$$$$  |$$ |_ $$ |$$ |  $$ |$$$$$$$$ |$$ |  $$ |$$$$$$$  |$$ |  $$ |$$ $$ $$ |
-$$$$/  $$$$ |    $$ |      $$ $$/   $$ |_____ $$ |  $$ |$$ |$$$$ |      /  \__$$ |$$ / \$$ |$$ \__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ \__$$ |$$ |$$$$ |
-$$$/    $$$ |    $$ |       $$$/    $$       |$$ |  $$ |$$ | $$$ |      $$    $$/ $$ $$ $$< $$    $$/ $$ |  $$ |$$    $$/ $$ |  $$ |$$    $$/ $$ | $$$ |
-$$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/   $$$$$$  | $$$$$$/  $$/   $$/ $$$$$$$/  $$/   $$/  $$$$$$/  $$/   $$/ 
-                                                                                       $$$/                                                             
-                                                                                                                                                        
-Welcome back wyvern 3
-
-what should we do?
-
-desktop         internet        about'''
-            nav()
 if __name__ == '__main__':
     nav()
     desktop()
+    mainDesktop()
