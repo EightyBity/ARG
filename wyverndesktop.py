@@ -11,6 +11,7 @@ import confidential
 import userfile
 import game
 import wyverntxt
+import help
 
 def screen():
      cls()
@@ -216,15 +217,8 @@ for help type help
             while True:
                 user = input()
                 if user.lower().strip() =='help':
-                    help='''use cd to move into folders
-use cat to read txt files
-some folders will require passwords to be accessed, when asked just type the password(case sensitive)
-'''
-                    for character in help:
-                        sys.stdout.write(character)
-                        sys.stdout.flush()
-                        time.sleep(0.005)
-                elif user.startswith('cd'):
+                    help.help()
+                elif user.lower().startswith('cd'):
                     if user.endswith('confidential'):
                         confidential.conFile()
                     elif user.endswith('users'):

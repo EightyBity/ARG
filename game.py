@@ -6,8 +6,8 @@ import sys
 import os
 import time
 import random
-from wyvern3 import passwordRequired
-from newuser import screen1
+import wyvern3
+import newuser
 from cls import cls
 
 def disclaimer():
@@ -23,8 +23,11 @@ WRITE DOWN I AGREE IF YOU UNDERSTOOD EVERYTHING IN THIS DISCLAIMER'''
     answer=input('''
 ''')
     if answer.lower().strip()=='i agree':
-        cls()
-        title = ''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
+        Game()
+    
+def Game():
+    cls()
+    title = ''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
 /  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
 $$ | / \ $$ |$$  \  /$$/ $$ |   $$ |$$$$$$$$/ $$$$$$$  |$$  \ $$ |      /$$$$$$  |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \ $$ |
 $$ |/$  \$$ | $$  \/$$/  $$ |   $$ |$$ |__    $$ |__$$ |$$$  \$$ |      $$ \__$$/ $$ |  $$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$$  \$$ |
@@ -36,32 +39,28 @@ $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/
                                                                                        $$$/                                                             
                                                                                                                                                         
 '''
-        for character in title:
-            sys.stdout.write(character)
-            sys.stdout.flush()
-            time.sleep(0.005)
-    Game()
-    
-def Game():
-    
+    for character in title:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.005)
         
-            usernameFound = 'a username has been found, do you want to use it now?(y/n)'
-            for character in usernameFound:
-               sys.stdout.write(character)
-               sys.stdout.flush()
-               time.sleep(0.05)
-            while True:
-                use_username=input()
-                if use_username.lower().strip() in ['y','yes']:
-                    cls()
-                    passwordRequired()
-                elif use_username.lower().strip() in ['n','no']:
-                    cls()
-                    screen1()
+    usernameFound = 'a username has been found, do you want to use it now?(y/n)'
+    for character in usernameFound:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+    while True:
+        use_username=input()
+        if use_username.lower().strip() in ['y','yes']:
+                cls()
+                wyvern3.passwordRequired()
+        elif use_username.lower().strip() in ['n','no']:
+                cls()
+                newuser.screen1()
 
-                else:
-                    cls()
-                    print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
+        else:
+            cls()
+            print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
 /  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
 $$ | / \ $$ |$$  \  /$$/ $$ |   $$ |$$$$$$$$/ $$$$$$$  |$$  \ $$ |      /$$$$$$  |/$$$$$$  |$$ |  $$ |/$$$$$$  |$$$$$$$  |$$$$$$$  |/$$$$$$  |$$  \ $$ |
 $$ |/$  \$$ | $$  \/$$/  $$ |   $$ |$$ |__    $$ |__$$ |$$$  \$$ |      $$ \__$$/ $$ |  $$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$ |__$$ |$$ |  $$ |$$$  \$$ |
@@ -75,4 +74,5 @@ $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/
 please enter (y/n) or (yes/no)''')
             
 if __name__=='__main__':
+    disclaimer()
     Game()         

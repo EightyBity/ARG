@@ -2,14 +2,13 @@
 
 import sys
 import time
+import os
 
-from getpass import __all__
+import getpass
 
 from cls import cls
+import newuserdesktop
 
-class password:
-    def __init__(self):
-        self.name = ''
 def screen1():
     print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
 /  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
@@ -25,31 +24,34 @@ $$/      $$/     $$/         $/     $$$$$$$$/ $$/   $$/ $$/   $$/        $$$$$$/
                                                                                                                                                         
 
 username:NewUser''')
-    password_new = ''
-    if password_new == '':
-        pass1=input('please enter a new password: ')
-        pass2=input('please re-enter the password: ')
+    if not os.path.isfile('.password.txt'):
+        pass1=getpass.getpass('please enter a new password: ')
+        pass2=getpass.getpass('please re-enter the password: ')
         if pass1 == pass2:
+            with open('.password.txt', 'w') as f:
+                f.write(pass1)
+            os.system("attrib +h +r .password.txt")
             affirm='password changed successfully'
             for character in affirm:
                 sys.stdout.write(character)
                 sys.stdout.flush()
                 time.sleep(0.05)
+            
             cls()
             screen1()
         else:
             print('please make sure both spellings are correct')
-            time.sleep(1)
+            time.sleep(1.5)
             cls()
             screen1()
     else:
-        password= input('Password:')
-        if password == password_new:
+        password = getpass.getpass('password: ')
+        with open('.password.txt','r') as f:
+            saved_password = f.read().strip()
+        if password == saved_password:
             cls()
-            welcome='welcome, what would you like to do?'
-            for character in welcome:
-                sys.stdout.write(character)
-                sys.stdout.flush()
-                time.sleep(0.05)
+            print('welcome', os.getlogin(),'please wait while we load your desktop')
+            time.sleep(5)
+            newuserdesktop.desk()
 if __name__ == '__main__':
     screen1()
