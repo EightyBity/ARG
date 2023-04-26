@@ -10,3 +10,5 @@ folders never have extenstions'''
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.05)
+if __name__ == '__main__':
+    help()
