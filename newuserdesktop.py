@@ -55,7 +55,6 @@ usr
 
 ''')
         player = input('''type help for help
-
 ''')
                        
         

@@ -5,7 +5,9 @@ import cls
 import newuserdesktop
 
 def wyvern1():
-    password = ''''''
+    password = '''A password is required
+'''
+    player = input('Password:')
 
 if __name__ == '__main__':
     wyvern1()
