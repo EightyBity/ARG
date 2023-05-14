@@ -14,7 +14,7 @@ def wyvernOrders():
         time.sleep(0.05)
     password = getpass.getpass('Password:') 
 
-    if password != 'Hat Die':
+    if password != 'HAT DIE':
         cls.cls()
         wrong = '''Wrong password please try again'''
 if __name__ == '__main__':

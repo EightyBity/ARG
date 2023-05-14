@@ -12,6 +12,16 @@ from cls import cls
 
 def disclaimer():
     cls()
+    if os.getlogin() == "Arrax":
+         disclaimer = '''what are you doing here wyvern lead? let the others play!'''
+         for character in disclaimer:
+          sys.stdout.write(character)
+          sys.stdout.flush()
+          time.sleep(0.05)
+         answer=input('''
+''')
+         if answer.lower().strip()=='i agree':
+            Game()
     disclaimer = '''MAKE SURE THE WINDOW IS IN FULLSCREEN OTHERWISE ASCII ART AND OTHER ASSETS MIGHT NOT SHOW PROPERLY
 PLEASE DO NOT PRESS ON CTRL+C UNLESS THE PROGRAM NEEDS TO BE CLOSED
 WHEN NEEDED A HELP COMMAND WILL BE SHOWN TO GIVE YOU AVAILABLE COMMANDS 
