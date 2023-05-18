@@ -8,7 +8,7 @@ import random
 
 from getpass import getpass
 
-from wyverndesktop import *
+import wyverndesktop
 from cls import cls
 def passwordRequired():
     incorrect = 0
@@ -142,7 +142,7 @@ Welcome back wyvern 3
 Loading [help]''')
         time.sleep(0.1)
 
-        screen()
+        wyverndesktop.screen()
     elif incorrect < 3:
         cls()
         print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
