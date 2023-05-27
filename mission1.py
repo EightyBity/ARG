@@ -21,6 +21,8 @@ Event.
 do not disapoint me wyvern 3, I trust you
 
 -Wyvern Lead 1 aka Arrax Eturnal
+
+ps. I hid the password to the next files in here.
 '''
     for characters in debrief:
         sys.stdout.write(characters)

@@ -169,6 +169,8 @@ directory not found, did you mean to use cat?''')
                     player = input()
                 elif player.lower().strip().endswith('usr'):
                     usr.usr()
+            elif player.lower().strip() == 'back':
+                game.Game()
             else:
                 cls.cls()
                 print('''

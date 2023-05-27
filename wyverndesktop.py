@@ -6,12 +6,15 @@ import sys
 import time
 
 from cls import cls
-from newuser import screen1
+import newuser
 import confidential
 import userfile
 import game
 import wyverntxt
 import help
+import allies
+import kos
+import orders
 
 def screen():
      cls()
@@ -145,7 +148,7 @@ def desktop():
     print('''an error has occured please stand-by while we check stability
 
 25%''')
-    time.sleep(1)
+    time.sleep(10)
     cls()
     error = '''os is unstable, some of the files have been saved in backup, do you wish to continue?(y/n)
 '''
@@ -153,8 +156,9 @@ def desktop():
             sys.stdout.write(character)
             sys.stdout.flush()
             time.sleep(0.05)
-    user = input()
-    if user.lower().strip() in ['y','yes']:
+    while True:
+        user = input()
+        if user.lower().strip() in ['y','yes']:
             cls()
             mainDesktop1 = '''
   (`\ .-') /`                   (`-.      ('-.    _  .-')        .-') _                  
@@ -177,7 +181,7 @@ for help type help
                 sys.stdout.flush()
                 time.sleep(0.005)
             mainDesktop()
-    elif user.lower().strip() in ['n','no']:
+        elif user.lower().strip() in ['n','no']:
             cls()
             print(''' __       __  __      __  __     __  ________  _______   __    __         ______    ______   __    __   ______   _______   _______    ______   __    __ 
 /  |  _  /  |/  \    /  |/  |   /  |/        |/       \ /  \  /  |       /      \  /      \ /  |  /  | /      \ /       \ /       \  /      \ /  \  /  |
@@ -196,6 +200,9 @@ what should we do?
 
 desktop         internet        about''')
             nav()
+        else:
+            cls()
+            print("please answer with y/n or yes/no")
 def mainDesktop():
             cls()
             print('''
@@ -239,7 +246,7 @@ for help type help
 confidential        users       wyverns.txt     
 
 allies.txt          kos.txt     orders
-im sorry, the cd command is to go through directories, did you mean to use cat?
+im sorry,''', user,'''is not a directory, did you mean to use cat?
 ''')
                     else:
                          cls()
@@ -262,6 +269,12 @@ no directory found
                 elif user.startswith('cat'):
                     if user.lower().endswith('wyverns.txt'):
                          wyverntxt.wyvernscript()
+                    elif user.lower().endswith('allies.txt'):
+                         allies.allies()
+                    elif user.lower().endswith('kos.txt'):
+                         kos.killOnSight()
+                    elif user.lower().endswith('orders'):
+                         orders.orders()
                 else:
                      cls()
                      print('''
